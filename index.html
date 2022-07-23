@@ -54,25 +54,65 @@
             font-size: 10px;
         }
 
-        /* .head {
-            background-color: black;
-            color: white;
-            height: 120px;
-            line-height: 120px;
-        } */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /*去除未被访问的a标签的下划线*/
+        a:link {
+            text-decoration: none;
+        }
+
+        /*去除已经被访问过的a标签的下划线*/
+        a:visited {
+            text-decoration: none;
+        }
+
+        /*去除鼠标悬停时的a标签的下划线*/
+        a:hover {
+            text-decoration: none;
+        }
+
+        /*去除正在点击的a标签的下划线（鼠标按下，尚未松开）*/
+        a:active {
+            text-decoration: none;
+        }
+
+        /*去除获得焦点的a标签的下划线（被鼠标点击过）*/
+        a:focus {
+            text-decoration: none;
+        }
+
+        .content>ol>li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid black;
+            width: 65px;
+        }
+
+        #history>ol>li {
+            margin-left: -25px;
+        }
     </style>
 </head>
 
 <body>
     <div class="head">
         <h1>幻影旅团</h1>
-        <h3 style="margin-left: 60%;">———————出自《全职猎人》富坚义博</h1>
     </div>
     <hr>
     <div class="content">
+        <!-- 超链接 -->
+        <ol>
+            <li><a href="#background">背景介绍</a></li>
+            <li><a href="#members">成员介绍</a></li>
+            <li><a href="#history">旅团事迹</a></li>
+            <li><a href="#rules">旅团规则</a></li>
+        </ol>
+
         <ul>
             <!-- 背景介绍 -->
-            <li>
+            <li id="background">
                 <h2>旅团背景</h2>
                 <p>
                     幻影旅团的成员主要来自流星街，这是一个充满垃圾的城市，居住着被遗弃的人们。居住在这里的人没有任何官方记录证明他们的存在，很少人知道他们以及流星街的存在。库洛洛创立了幻影旅团和其他六个流星街居民离开这个城市。团员数初定为十三人，初始成员七人，分别为富兰克林，派克诺坦，玛奇，窝金，飞坦，信长，库洛洛。
@@ -83,7 +123,7 @@
             <hr>
 
             <!-- 成员介绍 -->
-            <li style="padding-bottom: 20px;">
+            <li style="padding-bottom: 20px;" id="members">
                 <div>
                     <h2>旅团成员</h2>
                     <table>
@@ -101,7 +141,7 @@
                                 <td>库洛洛·鲁西鲁
                                     特质系能力者。身份为盗贼团体幻影旅团的团长，将性格不同的团员管理的服服帖帖，平时在基地下达命令，必要的时候也会亲自上战场。兴趣是欣赏财宝，尤其喜欢古书籍。</td>
                                 <td>
-                                    <img src="imgs/kll.jpg">
+                                    <a href="imgs/kll.jpg" target="_blank"><img src="imgs/kll.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 信长 -->
@@ -111,7 +151,7 @@
                                     幻影旅团团员，强化系能力者。居合拔刀术的高手，旅团第一的武斗派。他与同资历的窝金丝多次穿越生死线的好友，作风冷酷，但对于赏识的对象，也有友善的一面。他对小杰和奇犽特别给予高度评价。
                                 </td>
                                 <td>
-                                    <img src="imgs/xc.jpg">
+                                    <a href="imgs/xc.jpg" target="_blank"><img src="imgs/xc.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 飞坦 -->
@@ -121,7 +161,7 @@
                                     幻影旅团成员，变化系能力者。目光锐利的杀手。个性极为冷酷，六亲不认，没血没泪，一如世人对幻影旅团的印象。在说话的方式上，有与众不同的语尾助词，飞坦在旅团担的任务是战斗以及拷问抓回来的敌人。
                                 </td>
                                 <td>
-                                    <img src="imgs/ft.jpg">
+                                    <a href="imgs/ft.jpg" target="_blank"><img src="imgs/ft.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 玛奇 -->
@@ -131,7 +171,7 @@
                                     幻影旅团团员，变化系能力者。外表是娇小可人的少女，但其阳刚的个性使她的言行让人相当招架不住。手很有力气，能展现出三两下制服小杰和奇犽的战斗能力，对于想要和团长决斗的西索怀有戒心。
                                 </td>
                                 <td>
-                                    <img src="imgs/mq.jpg">
+                                    <a href="imgs/mq.jpg" target="_blank"><img src="imgs/mq.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 柯特 -->
@@ -142,7 +182,7 @@
                                     幻影旅团团员，操作系能力者。为了取代哥哥，作为西索的替补加入幻影旅团，想爬到旅团第二实力位置。在和其他成员抵达流星街，消灭嵌合蚁的过程中，察觉到自己的实力在组织中相当渺小。
                                 </td>
                                 <td>
-                                    <img src="imgs/kt.jpg">
+                                    <a href="imgs/kt.jpg" target="_blank"><img src="imgs/kt.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 芬克斯 -->
@@ -152,7 +192,7 @@
                                     幻影旅团团员，强化系能力者。旅团的战斗员，总是第一个赶到战斗场所。耐不住性子，动不动就发飙的危险人物，但也有冷静的一面。他与飞坦很合得来，常常一起行动。有时候会穿着外形奇怪的帽子和斗篷，像埃及法老一样。
                                 </td>
                                 <td>
-                                    <img src="imgs/fks.jpg">
+                                    <a href="imgs/fks.jpg" target="_blank"><img src="imgs/fks.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 富兰克林 -->
@@ -162,7 +202,7 @@
                                     幻影旅团团员，放出系能力者。看似凶狠，其实个性老实，很体贴同伴。当团长被敌人囚禁时，旅团成员曾为了是否去救团长而意见不合。可是在富兰克林的说服下而平息。他在旅团是隐性和事老。
                                 </td>
                                 <td>
-                                    <img src="imgs/flkl.jpg">
+                                    <a href="imgs/flkl.jpg" target="_blank"><img src="imgs/flkl.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 小滴 -->
@@ -173,7 +213,7 @@
                                     幻影旅团团员，具现化系能力者。小滴在旅团主要负责旅团的善后、搬运工作，因为她的主要念能力是以念能力具现化的吸尘器—凸眼鱼，凸眼鱼可以依照小滴的命令吸入任何东西。小滴为人礼貌，但是天生健忘，混在人群中也很像一个普通的女孩。
                                 </td>
                                 <td>
-                                    <img src="imgs/xd.jpg">
+                                    <a href="imgs/xd.jpg" target="_blank"><img src="imgs/xd.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 剥落列夫 -->
@@ -183,7 +223,7 @@
                                     幻影旅团团员，具现化系能力者。像木乃伊一样全身缠满绷带的男子。是古东冬多族的族人，身上有许多洞。自从来到友克鑫之后
                                     就受命担任基地的警备，经常守在团长身边，甚少参与行动。</td>
                                 <td>
-                                    <img src="imgs/bllf.jpg">
+                                    <a href="imgs/bllf.jpg" target="_blank"><img src="imgs/bllf.jpg"></a>
                                 </td>
                             </tr>
                             <!-- 伊尔迷 -->
@@ -192,7 +232,7 @@
                                 <td>伊尔迷·揍敌客
                                     奇犽的大哥，揍敌客家族长子。因为委托而临时加入幻影旅团，顶替西索的位置。</td>
                                 <td>
-                                    <img src="imgs/yem.jpg">
+                                    <a href="imgs/yem.jpg" target="_blank"><img src="imgs/yem.jpg"></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -202,9 +242,9 @@
             </li>
 
             <!-- 旅团事迹 -->
-            <li>
+            <li id="history">
                 <h2>旅团事迹</h2>
-                <ol style="line-height:40px ;">
+                <ol style="line-height:40px;">
                     <li>1986年　库洛洛·鲁西鲁创立幻影旅团；（团员数初定为十三人，初始成员七人，分别为富兰克林，派克诺坦，玛奇，窝金，飞坦，信长，库洛洛）</li>
                     <li>1994.9～1995.2　为了夺取火红睛（绯红之眼），对窟卢塔族进行了灭族的屠杀；</li>
                     <li>1996.7　全员集合，共13人；</li>
@@ -224,7 +264,7 @@
             <hr>
 
             <!-- 旅团团规 -->
-            <li style="padding-bottom:30px;">
+            <li style="padding-bottom:30px;" id="rules">
                 <h2>旅团规则</h2>
                 <section style="line-height:40px;">
                     如果想加入旅团，可以先杀死旅团中的某一个成员，然后就能代替此人成为新的团员。但若是团员因为其他原因而死，团长也会主动去寻找新的团员。
